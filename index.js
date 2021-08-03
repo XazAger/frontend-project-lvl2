@@ -1,9 +1,10 @@
-import fs from 'fs';
 import _ from 'lodash';
+import parser from './src/parser.js';
 
 export default (filepath1, filepath2) => {
-  const obj1 = JSON.parse(fs.readFileSync(filepath1, 'utf-8'));
-  const obj2 = JSON.parse(fs.readFileSync(filepath2, 'utf-8'));
+
+  const obj1 = parser(filepath1);
+  const obj2 = parser(filepath2);
 
   const operators = ['+', '-'];
 
@@ -37,4 +38,4 @@ export default (filepath1, filepath2) => {
   const unionResults = Object.assign(newObject2, newObject1);
 
   return JSON.stringify(unionResults, null, 2);
-}
+};

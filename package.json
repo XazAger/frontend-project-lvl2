@@ -21,7 +21,9 @@
     "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
+    "@jest/globals": "^27.0.6",
     "commander": "^8.1.0",
+    "js-yaml": "^3.14.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
